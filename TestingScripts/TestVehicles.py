@@ -1,30 +1,13 @@
 
-import numpy as np
-import csv, yaml
-import Rewards as r
 
-import LibFunctions as lib
 from LibFunctions import load_config
-from matplotlib import pyplot as plt
 
-# from AgentOptimal import OptimalAgent
-from AgentOptimal import FollowTheGap, TunerCar
-from AgentMod import ModVehicleTest, ModVehicleTrain
+from RewardSignalDesign.AgentOptimal import FollowTheGap, PurePursuit
+from RewardSignalDesign.AgentMod import ModVehicleTest, ModVehicleTrain
 
+from TestingScripts.TrainTestUtils import TestVehicles
 
-config_sf = "small_forest"
-config_std = "std_config"
-
-
-from Testing import TestVehicles, TrainVehicle
-
-config_sf = "small_forest"
-config_std = "std_config"
-config_med = "med_forest"
 config_rt = "race_track"
-
-
-
 
 
 def FullTest():
@@ -68,7 +51,7 @@ def FullTest():
     test.add_vehicle(vehicle)
 
     # PP
-    vehicle = TunerCar(config)
+    vehicle = PurePursuit(config)
     test.add_vehicle(vehicle)
 
     # FTG

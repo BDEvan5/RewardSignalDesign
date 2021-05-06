@@ -6,7 +6,7 @@ from numba import njit
 import LibFunctions as lib
 from Simulator import ScanSimulator
 
-
+#TODO: I think remove this?
 class OptimalAgent:
     def __init__(self, config):
         self.name = "Optimal Agent: Following target references"
@@ -142,7 +142,7 @@ class OptimalAgent:
         return new_steer
 
 
-class TunerCar:
+class PurePursuit:
     def __init__(self, config) -> None:
         self.config = config
         self.name = "TunerCar Agent: Following PP references"
