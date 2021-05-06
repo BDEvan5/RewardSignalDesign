@@ -1,0 +1,58 @@
+# Car parameters
+
+car:
+  mu: 0.523
+  m: 3.47
+  g: 9.81
+  l_f: 0.158
+  l_r: 0.17
+  
+# limits 
+lims:
+  max_v: 7
+  max_a: 8.5
+  max_steer: 0.4
+  max_d_dot: 3.2
+  dis_scale: 0.5
+
+max_v: 7
+max_a: 8.5
+max_steer: 0.4
+max_d_dot: 3.2
+dis_scale: 0.5
+
+map:
+  name: "med_forest"
+  obs_size: 1.5
+  n_obs: 3
+  obs_buf: 3
+  end:
+    x: 3
+    y: 14
+
+forest_len: 16
+forest_w: 6
+start: [3, 1]
+end: [3, 14]
+obs_buf: 3
+resolution: 0.1
+plan_scale: 1.2
+# n_obs: 8
+# obs_size: 0.5
+
+n_obs: 3
+obs_size: 1.5
+
+
+sim:
+  timestep: 0.02
+  update_f: 10
+  beams: 10
+
+pp:
+  lookahead: 2
+  v_gain: 0.9
+  force_f: 0.8
+
+nn:
+  h: 200
