@@ -43,87 +43,6 @@ def distance_potential(s, s_p, end, beta=0.2, scale=0.5):
 
 
 
-# Forest Rewards
-class SteerReward:
-    def __init__(self, config, mv, ms) -> None:
-        self.max_steer = config['lims']['max_steer']
-        self.max_v = config['lims']['max_v']
-        self.end = [config['map']['end']['x'], config['map']['end']['y']]
-        self.mv = mv 
-        self.ms = ms 
-
-    def init_reward(self, pts, vs):
-        pass
-        
-    def __call__(self, s, a, s_p, r, dev) -> float:
-        if r == -1:
-            return r
-        else:
-            shaped_r = distance_potential(s, s_p, self.end)
-
-            vel = a[0] / self.max_v 
-            steer = abs(a[1]) / self.max_steer
-
-            new_r = self.mv * vel - self.ms * steer 
-
-            # return new_r + r + shaped_r 
-            return new_r + shaped_r 
-
-class CthReward:
-    def __init__(self, config, mh, md) -> None:
-        self.mh = mh 
-        self.md = md
-        self.dis_scale = config['lims']["dis_scale"]
-        self.max_v = config['lims']["max_v"]
-        self.end = [config['map']['end']['x'], config['map']['end']['y']]
-
-        self.pts = None
-        self.vs = None
-
-    def init_reward(self, pts, vs):
-        self.pts = pts
-        self.vs = vs
-            
-    def __call__(self, s, a, s_p, r) -> float:
-        if r == -1:
-            return r
-        else:
-            pt_i, pt_ii, d_i, d_ii = find_closest_pt(s_p[0:2], self.pts)
-            d = lib.get_distance(pt_i, pt_ii)
-            d_c = get_tiangle_h(d_i, d_ii, d) / self.dis_scale
-
-            th_ref = lib.get_bearing(pt_i, pt_ii)
-            th = s_p[2]
-            d_th = abs(lib.sub_angles_complex(th_ref, th))
-            v_scale = s_p[3] / self.max_v
-
-            shaped_r = distance_potential(s, s_p, self.end)
-
-            new_r =  self.mh * np.cos(d_th) * v_scale - self.md * d_c
-
-            return new_r + r + shaped_r
-
-class TimeReward:
-    def __init__(self, config, mt) -> None:
-        self.mt = mt 
-        self.dis_scale = config['lims']["dis_scale"]
-        self.end = [config['map']['end']['x'], config['map']['end']['y']]
-        self.max_steer = config['lims']['max_steer']
-
-    def init_reward(self, pts, vs):
-        pass
-
-    def __call__(self, s, a, s_p, r) -> float:
-        if r == -1:
-            return r
-        else:
-            shaped_r = distance_potential(s, s_p, self.end)
-
-            new_r = - self.mt
-
-            return new_r + r + shaped_r
-
-
 
 # Track base
 class TrackPtsBase:
@@ -285,16 +204,6 @@ class CenterCTHReward(TrackPtsBase):
 
             return new_r + r
 
-# 5) Time
-class TrackTimeReward():
-    def __init__(self, config, mt) -> None:
-        self.mt = mt 
-        
-    def __call__(self, s, a, s_p, r, dev) -> float:
-        if r == -1:
-            return -1
-        else:
-            return -self.mt + r 
 
 # 6) Distance ref
 class RefDistanceReward(TrackPtsBase):
