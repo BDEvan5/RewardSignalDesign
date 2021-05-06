@@ -1,7 +1,7 @@
 import numpy as np 
 from matplotlib import pyplot as plt
 
-import LibFunctions as lib
+import RewardSignalDesign.LibFunctions as lib
 
 
 

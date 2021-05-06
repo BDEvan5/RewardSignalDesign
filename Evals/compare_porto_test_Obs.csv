@@ -1,9 +1,9 @@
 #,Name,%Complete,AvgTime,Std
-0,ModEmp_porto_test,0.0,0.0,0.0
-1,ModCenterDis_porto_test,100.0,126.3,4.539823785126467
-2,ModRefDis_porto_test,30.0,106.66666666666667,0.4714045207910317
+0,ModEmp_porto_test,20.0,76.5,0.5
+1,ModCenterDis_porto_test,90.0,126.0,5.597618541248888
+2,ModRefDis_porto_test,80.0,104.375,2.1758618981911515
 3,ModCenterCth_porto_test,0.0,0.0,0.0
 4,ModRefCth_porto_test,0.0,0.0,0.0
-5,ModSteer_porto_test,0.0,0.0,0.0
-6,TunerCar Agent: Following PP references,0.0,0.0,0.0
-7,Follow The Gap,0.0,0.0,0.0
+5,ModSteer_porto_test,70.0,119.71428571428571,73.11187960089325
+6,TunerCar Agent: Following PP references,10.0,72.0,0.0
+7,Follow The Gap,80.0,100.25,3.418698582794336

@@ -1,8 +1,7 @@
 import numpy as np 
 import csv
 
-from numpy.core import machar
-import LibFunctions as lib
+import RewardSignalDesign.LibFunctions as lib
 
 
 def find_closest_pt(pt, wpts):

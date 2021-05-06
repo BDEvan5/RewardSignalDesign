@@ -8,15 +8,13 @@ from RewardSignalDesign.AgentMod import ModVehicleTest, ModVehicleTrain
 from TestingScripts.TrainTestUtils import TestVehicles
 
 config_rt = "race_track"
+env_name = "porto"
+train_name = "_test"
+test_name = "compare_" + env_name + train_name
 
 
 def FullTest():
     config = load_config(config_rt)
-
-    env_name = "porto"
-    train_name = "_test"
-    test_name = "compare_" + env_name + train_name
-    # test_name = "compare_NoObs_" + env_name + train_name
     test = TestVehicles(config, test_name, 'track')
 
     # 1) no racing reward
@@ -39,7 +37,6 @@ def FullTest():
     vehicle = ModVehicleTest(config, agent_name)
     test.add_vehicle(vehicle)
 
-
     # 7) CTH ref
     agent_name = "ModRefCth_" + env_name + train_name
     vehicle = ModVehicleTest(config, agent_name)
@@ -61,8 +58,6 @@ def FullTest():
     test.run_eval(1, False, add_obs=False, save=False)
     test.eval_name += "_Obs"
     test.run_eval(10, False, add_obs=True, save=False)
-
-
 
 
 

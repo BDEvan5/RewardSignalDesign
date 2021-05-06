@@ -3,7 +3,7 @@ import numpy as np
 import casadi as ca 
 from matplotlib import pyplot as plt 
 
-import LibFunctions as lib 
+import RewardSignalDesign.LibFunctions as lib 
 
 def MinCurvatureTrajectory(pts, nvecs, ws):
     """

@@ -1,5 +1,4 @@
 import numpy as np 
-from matplotlib import pyplot as plt
 import random
 
 import torch
@@ -7,7 +6,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
-import LibFunctions as lib
 
 MEMORY_SIZE = 100000
 

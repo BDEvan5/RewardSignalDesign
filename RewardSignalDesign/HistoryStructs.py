@@ -1,4 +1,4 @@
-import LibFunctions as lib
+import RewardSignalDesign.LibFunctions as lib
 import os, shutil
 import csv
 import numpy as np

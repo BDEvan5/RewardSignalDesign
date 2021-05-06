@@ -1,36 +1,17 @@
 
-import numpy as np
-import csv, yaml
-import Rewards as r
 
-import LibFunctions as lib
-from LibFunctions import load_config
-from matplotlib import pyplot as plt
+from RewardSignalDesign.LibFunctions import load_config
+import RewardSignalDesign.Rewards as r
+from RewardSignalDesign.AgentMod import ModVehicleTrain
 
-# from AgentOptimal import OptimalAgent
-from AgentOptimal import FollowTheGap, TunerCar
-from AgentMod import ModVehicleTest, ModVehicleTrain
+from TestingScripts.TrainTestUtils import TrainVehicle
 
 
-config_sf = "small_forest"
-config_std = "std_config"
-
-
-from Testing import TestVehicles, TrainVehicle
-
-config_sf = "small_forest"
-config_std = "std_config"
-config_med = "med_forest"
 config_rt = "race_track"
-
-
 n_train_itterations = 1000
 map_name = "porto"
 train_name = "_test"
 
-
-
-"""Mod training"""
 
 def train_mod_emp():
     agent_name = "ModEmp_" + map_name + train_name
