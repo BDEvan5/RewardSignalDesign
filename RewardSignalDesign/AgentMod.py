@@ -1,10 +1,10 @@
 import numpy as np 
 from matplotlib import pyplot as plt
 
-from ModelsRL import TD3
+from RewardSignalDesign.ModelsRL import TD3
 
-import LibFunctions as lib
-from Simulator import ScanSimulator
+import RewardSignalDesign.LibFunctions as lib
+from RewardSignalDesign.Simulator import ScanSimulator
 
 
 

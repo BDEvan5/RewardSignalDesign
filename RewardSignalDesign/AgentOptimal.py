@@ -3,8 +3,8 @@ import casadi as ca
 from matplotlib import pyplot as plt
 from numba import njit
  
-import LibFunctions as lib
-from Simulator import ScanSimulator
+import RewardSignalDesign.LibFunctions as lib
+from RewardSignalDesign.Simulator import ScanSimulator
 
 
 class PurePursuit:

@@ -1,11 +1,11 @@
 
 
-from LibFunctions import load_config
+from RewardSignalDesign.LibFunctions import load_config
 
 from RewardSignalDesign.AgentOptimal import FollowTheGap, PurePursuit
 from RewardSignalDesign.AgentMod import ModVehicleTest, ModVehicleTrain
 
-from TestingScripts.TrainTestUtils import TestVehicles
+from TrainTestUtils import TestVehicles
 
 config_rt = "race_track"
 env_name = "porto"

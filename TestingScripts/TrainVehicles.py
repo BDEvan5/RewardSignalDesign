@@ -4,13 +4,13 @@ from RewardSignalDesign.LibFunctions import load_config
 import RewardSignalDesign.Rewards as r
 from RewardSignalDesign.AgentMod import ModVehicleTrain
 
-from TestingScripts.TrainTestUtils import TrainVehicle
+from TrainTestUtils import TrainVehicle
 
 
 config_rt = "race_track"
-n_train_itterations = 1000
+n_train_itterations = 100000
 map_name = "porto"
-train_name = "_test"
+train_name = "_final"
 
 
 def train_mod_emp():
