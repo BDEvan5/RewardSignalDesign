@@ -9,7 +9,7 @@ from TrainTestUtils import TestVehicles
 
 config_rt = "race_track"
 env_name = "porto"
-train_name = "_test"
+train_name = "_final"
 test_name = "compare_" + env_name + train_name
 
 
@@ -55,9 +55,9 @@ def FullTest():
     vehicle = FollowTheGap(config)
     test.add_vehicle(vehicle)
 
-    test.run_eval(1, False, add_obs=False, save=False)
+    # test.run_eval(1, False, add_obs=False, save=False)
     test.eval_name += "_Obs"
-    test.run_eval(10, False, add_obs=True, save=False)
+    test.run_eval(100, False, add_obs=True, save=False)
 
 
 

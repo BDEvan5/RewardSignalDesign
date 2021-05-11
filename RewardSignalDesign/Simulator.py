@@ -421,7 +421,7 @@ class TrackSim(BaseSim):
         self.car.prev_loc = [self.car.x, self.car.y]
         self.car.velocity = 0
         self.car.steering = 0
-        self.car.theta = -np.pi/2
+        self.car.theta = np.pi/2
         # TODO: have a theta start in config file
 
         #TODO: combine with reset lap that it can be called every lap and do the right thing

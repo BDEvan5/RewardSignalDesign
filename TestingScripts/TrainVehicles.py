@@ -69,12 +69,12 @@ def train_mod_steer():
 def train():
     pass
 
-    # train_mod_emp()
-    # train_distance_center()
-    # train_distance_ref()
-    # train_cth_center()
+    train_mod_emp()
+    train_distance_center()
+    train_distance_ref()
+    train_cth_center()
     train_cth_ref()
-    # train_mod_steer()
+    train_mod_steer()
 
 
 
