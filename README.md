@@ -36,11 +36,13 @@ This repo contains the code for the paper, ["From Navigation to Racing: Reward S
 ## Citing
 If you have found our work helpful, please cite as:
 ```latex
-@article{evans2021navigation,
-  title={From Navigation to Racing: Reward Signal Design for Autonomous Racing},
+@inproceedings{evans2021reward,
+  title={Reward signal design for autonomous racing},
   author={Evans, Benjamin and Engelbrecht, Herman A and Jordaan, Hendrik W},
-  journal={arXiv preprint arXiv:2103.10098},
-  year={2021}
+  booktitle={2021 20th International Conference on Advanced Robotics (ICAR)},
+  pages={455--460},
+  year={2021},
+  organization={IEEE}
 }
 ```
 
